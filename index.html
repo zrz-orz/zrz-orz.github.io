@@ -213,79 +213,6 @@
   
   
   <div class="post-block home">
-    <link itemprop="mainEntityOfPage" href="https://zrz-orz.github.io/2019/09/20/test/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zrz_orz">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="zrz_orz's Blog">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-            
-            <a href="/2019/09/20/test/" class="post-title-link" itemprop="url">test</a>
-          
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              
-                
-              
-
-              <time title="Created: 2019-09-20 21:05:33 / Modified: 21:17:00" itemprop="dateCreated datePublished" datetime="2019-09-20T21:05:33+08:00">2019-09-20</time>
-            </span>
-          
-            
-
-            
-          
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="Test"><a href="#Test" class="headerlink" title="Test"></a>Test</h2><p>貌似有数学公式的页面看不了？？</p>
-
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-          <div class="post-eof"></div>
-        
-      </footer>
-  </div>
-  
-  
-  
-  </article>
-
-    
-        <article itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block home">
     <link itemprop="mainEntityOfPage" href="https://zrz-orz.github.io/2019/09/20/莫比乌斯反演相关记录/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -334,24 +261,53 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="关于一些莫比乌斯反演的东西"><a href="#关于一些莫比乌斯反演的东西" class="headerlink" title="关于一些莫比乌斯反演的东西"></a>关于一些莫比乌斯反演的东西</h2><h3 id="常用操作"><a href="#常用操作" class="headerlink" title="常用操作"></a>常用操作</h3><script type="math/tex; mode=display">
-[gcd(i,j) == 1] = \sum_{d | gcd(i, j)} \mu(d)</script><h3 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h3><hr>
-<h4 id="yy的gcd"><a href="#yy的gcd" class="headerlink" title="yy的gcd"></a>yy的gcd</h4><script type="math/tex; mode=display">
-\sum_{t \in prime} \sum_{i = 1}^n \sum_{j = 1}^m  [gcd(i, j) == t]</script><script type="math/tex; mode=display">
-\sum_{t \in prime} \sum_{i = 1}^{\lfloor\frac{n}{t}\rfloor} \sum_{j = 1}^{\lfloor\frac{m}{t}\rfloor}  [gcd(i, j) == 1]</script><script type="math/tex; mode=display">
-\sum_{t \in prime} \sum_{i = 1}^{\lfloor\frac{n}{t}\rfloor} \sum_{j = 1}^{\lfloor\frac{m}{t}\rfloor}  \sum_{d | gcd(i, j)} \mu(d)</script><script type="math/tex; mode=display">
-\sum_{t \in prime} \sum_{d = 1}^{\lfloor\frac{n}{t}\rfloor} \mu(d) \times \lfloor\frac{n}{dt}\rfloor \times \lfloor\frac{m}{dt}\rfloor</script><p>令 $T = td $</p>
-<script type="math/tex; mode=display">
-\sum_{T = 1}^{min(n, m)} \lfloor\frac{n}{T}\rfloor \times \lfloor\frac{m}{T}\rfloor \sum_{d | T, d \in prime} \mu (\frac{T}{d})</script><hr>
-<h4 id="Crash的数字表格"><a href="#Crash的数字表格" class="headerlink" title="Crash的数字表格"></a>Crash的数字表格</h4><script type="math/tex; mode=display">
-\sum_{i = 1}^n \sum_{j = 1}^m lcm(i, j)</script><script type="math/tex; mode=display">
-\sum_{i = 1}^n \sum_{j = 1}^m \frac{ij}{gcd(i, j)}</script><script type="math/tex; mode=display">
-\sum_{t = 1}^{min(n, m)} t\  \sum_{i = 1}^{\lfloor\frac{n}{t}\rfloor} \sum_{j = 1}^{\lfloor\frac{m}{t}\rfloor} [gcd(i, j] == 1]\  ij</script><script type="math/tex; mode=display">
-\sum_{t = 1}^{min(n, m)} t\  \sum_{i = 1}^{\lfloor\frac{n}{t}\rfloor} \sum_{j = 1}^{\lfloor\frac{m}{t}\rfloor} \sum_{d | gcd(i, j)} \mu (d) ij</script><p>记 $sum(n) = \frac{n * (n + 1)}{2}$</p>
-<script type="math/tex; mode=display">
-\sum_{t = 1}^{min(n, m)} t\  \sum_{d = 1}^{min(\lfloor\frac{n}{t}\rfloor, \lfloor\frac{m}{t}\rfloor)} d^2 \mu(d) \times sum(\lfloor\frac{n}{td}\rfloor) \times sum(\lfloor\frac{m}{td}\rfloor)</script><p>记 $ f(n, m) = \sum_{d = 1}^{min(n, m)} d^2 \mu(d) \times sum(\lfloor\frac{n}{d}\rfloor) \times sum(\lfloor\frac{m}{d}\rfloor) $</p>
-<script type="math/tex; mode=display">
-\sum_{t = 1}^{min(n, m)} t \times f(\lfloor\frac{n}{t}\rfloor, \lfloor\frac{m}{t}\rfloor)</script>
+          <h2>关于一些莫比乌斯反演的东西</h2>
+<h3>常用操作</h3>
+<p>$$
+[gcd(i,j) == 1] = \sum_{d | gcd(i, j)} \mu(d)
+$$</p>
+<h3>例题</h3>
+<hr>
+<h4>yy的gcd</h4>
+<p>$$
+\sum_{t \in prime} \sum_{i = 1}^n \sum_{j = 1}^m  [gcd(i, j) == t]
+$$</p>
+<p>$$
+\sum_{t \in prime} \sum_{i = 1}^{\lfloor\frac{n}{t}\rfloor} \sum_{j = 1}^{\lfloor\frac{m}{t}\rfloor}  [gcd(i, j) == 1]
+$$</p>
+<p>$$
+\sum_{t \in prime} \sum_{i = 1}^{\lfloor\frac{n}{t}\rfloor} \sum_{j = 1}^{\lfloor\frac{m}{t}\rfloor}  \sum_{d | gcd(i, j)} \mu(d)
+$$</p>
+<p>$$
+\sum_{t \in prime} \sum_{d = 1}^{\lfloor\frac{n}{t}\rfloor} \mu(d) \times \lfloor\frac{n}{dt}\rfloor \times \lfloor\frac{m}{dt}\rfloor
+$$</p>
+<p>令 $T = td $</p>
+<p>$$
+\sum_{T = 1}^{min(n, m)} \lfloor\frac{n}{T}\rfloor \times \lfloor\frac{m}{T}\rfloor \sum_{d | T, d \in prime} \mu (\frac{T}{d})
+$$</p>
+<hr>
+<h4>Crash的数字表格</h4>
+<p>$$
+\sum_{i = 1}^n \sum_{j = 1}^m lcm(i, j)
+$$</p>
+<p>$$
+\sum_{i = 1}^n \sum_{j = 1}^m \frac{ij}{gcd(i, j)}
+$$</p>
+<p>$$
+\sum_{t = 1}^{min(n, m)} t\  \sum_{i = 1}^{\lfloor\frac{n}{t}\rfloor} \sum_{j = 1}^{\lfloor\frac{m}{t}\rfloor} [gcd(i, j] == 1]\  ij
+$$</p>
+<p>$$
+\sum_{t = 1}^{min(n, m)} t\  \sum_{i = 1}^{\lfloor\frac{n}{t}\rfloor} \sum_{j = 1}^{\lfloor\frac{m}{t}\rfloor} \sum_{d | gcd(i, j)} \mu (d) ij
+$$</p>
+<p>记 $sum(n) = \frac{n * (n + 1)}{2}$</p>
+<p>$$
+\sum_{t = 1}^{min(n, m)} t\  \sum_{d = 1}^{min(\lfloor\frac{n}{t}\rfloor, \lfloor\frac{m}{t}\rfloor)} d^2 \mu(d) \times sum(\lfloor\frac{n}{td}\rfloor) \times sum(\lfloor\frac{m}{td}\rfloor)
+$$</p>
+<p>记 $ f(n, m) = \sum_{d = 1}^{min(n, m)} d^2 \mu(d) \times sum(\lfloor\frac{n}{d}\rfloor) \times sum(\lfloor\frac{m}{d}\rfloor) $</p>
+<p>$$
+\sum_{t = 1}^{min(n, m)} t \times f(\lfloor\frac{n}{t}\rfloor, \lfloor\frac{m}{t}\rfloor)
+$$</p>
+
         
       
     </div>
@@ -489,7 +445,7 @@
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-count">2</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -498,7 +454,7 @@
       
       <div class="site-state-item site-state-tags">
         
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">1</span>
         <span class="site-state-item-name">tags</span>
         
       </div>
@@ -590,8 +546,6 @@
   
 
   
-    
-      
     
       
         
