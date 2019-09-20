@@ -6,10 +6,16 @@
   <title>莫比乌斯反演记录 › zrz_orz&#39;s Blog</title>
   <meta name="author" content="zrz_orz">
   
-  <meta name="description" content="关于一些莫比乌斯反演的东西常用操作$$[gcd(i,j) == 1] = \sum_{d | gcd(i, j)} \mu(d)$$
+  <meta name="description" content="关于一些莫比乌斯反演的东西
+常用操作
+$$
+[gcd(i,j) == 1] = \sum_{d | gcd(i, j)} \mu(d)
+$$
 例题
-yy的gcd$$\sum_{t \in prime} \sum_{i = 1}^n \sum_{j = 1}^m  [gcd(i, j) == t] \
-\su">
+
+yy的gcd
+$$
+\sum_{t \in prime} \sum_{i = 1}^n \sum_{j = 1}^m  [gcd(i, j) == t">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -64,16 +70,25 @@ yy的gcd$$\sum_{t \in prime} \sum_{i = 1}^n \sum_{j = 1}^m  [gcd(i, j) == t] \
     </header>
     <div class="entry">
       
-        <h2 id="关于一些莫比乌斯反演的东西"><a href="#关于一些莫比乌斯反演的东西" class="headerlink" title="关于一些莫比乌斯反演的东西"></a>关于一些莫比乌斯反演的东西</h2><h3 id="常用操作"><a href="#常用操作" class="headerlink" title="常用操作"></a>常用操作</h3><p>$$<br>[gcd(i,j) == 1] = \sum_{d | gcd(i, j)} \mu(d)<br>$$</p>
-<h3 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h3><hr>
-<h4 id="yy的gcd"><a href="#yy的gcd" class="headerlink" title="yy的gcd"></a>yy的gcd</h4><p>$$<br>\sum_{t \in prime} \sum_{i = 1}^n \sum_{j = 1}^m  [gcd(i, j) == t] \</p>
+        <h2>关于一些莫比乌斯反演的东西</h2>
+<h3>常用操作</h3>
+<p>$$
+[gcd(i,j) == 1] = \sum_{d | gcd(i, j)} \mu(d)
+$$</p>
+<h3>例题</h3>
+<hr>
+<h4>yy的gcd</h4>
+<p>$$
+\sum_{t \in prime} \sum_{i = 1}^n \sum_{j = 1}^m  [gcd(i, j) == t] \</p>
 <p>\sum_{t \in prime} \sum_{i = 1}^{\lfloor\frac{n}{t}\rfloor} \sum_{j = 1}^{\lfloor\frac{m}{t}\rfloor}  [gcd(i, j) == 1] \</p>
 <p>\sum_{t \in prime} \sum_{i = 1}^{\lfloor\frac{n}{t}\rfloor} \sum_{j = 1}^{\lfloor\frac{m}{t}\rfloor}  \sum_{d | gcd(i, j)} \mu(d) \</p>
 <p>\sum_{t \in prime} \sum_{d = 1}^{\lfloor\frac{n}{t}\rfloor} \mu(d) \times \lfloor\frac{n}{dt}\rfloor \times \lfloor\frac{m}{dt}\rfloor \</p>
 <p>令 T = td \</p>
-<p>\sum_{T = 1}^{min(n, m)} \lfloor\frac{n}{T}\rfloor \times \lfloor\frac{m}{T}\rfloor \sum_{d | T, d \in prime} \mu (\frac{T}{d})<br>$$</p>
+<p>\sum_{T = 1}^{min(n, m)} \lfloor\frac{n}{T}\rfloor \times \lfloor\frac{m}{T}\rfloor \sum_{d | T, d \in prime} \mu (\frac{T}{d})
+$$</p>
 <hr>
-<h4 id="Crash的数字表格"><a href="#Crash的数字表格" class="headerlink" title="Crash的数字表格"></a>Crash的数字表格</h4><p>$$</p>
+<h4>Crash的数字表格</h4>
+<p>$$</p>
 <p>\sum_{i = 1}^n \sum_{j = 1}^m lcm(i, j)         \</p>
 <p>\sum_{i = 1}^n \sum_{j = 1}^m \frac{ij}{gcd(i, j)}      \</p>
 <p>\sum_{t = 1}^{min(n, m)} t\  \sum_{i = 1}^{\lfloor\frac{n}{t}\rfloor} \sum_{j = 1}^{\lfloor\frac{m}{t}\rfloor} [gcd(i, j] == 1]\  ij    \</p>
