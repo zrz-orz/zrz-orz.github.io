@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://zrz-orz.github.io/"/>
-  <updated>2019-09-20T19:03:02.594Z</updated>
+  <updated>2019-09-20T19:04:36.260Z</updated>
   <id>https://zrz-orz.github.io/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="https://zrz-orz.github.io/2019/09/21/%E8%8E%AB%E6%AF%94%E4%B9%8C%E6%96%AF%E5%8F%8D%E6%BC%94%E8%AE%B0%E5%BD%95/"/>
     <id>https://zrz-orz.github.io/2019/09/21/莫比乌斯反演记录/</id>
     <published>2019-09-20T17:00:46.000Z</published>
-    <updated>2019-09-20T19:03:02.594Z</updated>
+    <updated>2019-09-20T19:04:36.260Z</updated>
     
-    <content type="html"><![CDATA[<h2>关于一些莫比乌斯反演的东西</h2><h3>常用操作</h3><p>$$[gcd(i,j) == 1] = \sum_{d | gcd(i, j)} \mu(d)$$</p><h3>例题</h3><hr><h4>yy的gcd</h4><p>$$\sum_{t \in prime} \sum_{i = 1}^n \sum_{j = 1}^m  [gcd(i, j) == t]$$</p><p>$$\sum_{t \in prime} \sum_{i = 1}^{\lfloor\frac{n}{t}\rfloor} \sum_{j = 1}^{\lfloor\frac{m}{t}\rfloor}  [gcd(i, j) == 1]$$</p><p>$$\sum_{t \in prime} \sum_{i = 1}^{\lfloor\frac{n}{t}\rfloor} \sum_{j = 1}^{\lfloor\frac{m}{t}\rfloor}  \sum_{d | gcd(i, j)} \mu(d)$$</p><p>$$\sum_{t \in prime} \sum_{d = 1}^{\lfloor\frac{n}{t}\rfloor} \mu(d) \times \lfloor\frac{n}{dt}\rfloor \times \lfloor\frac{m}{dt}\rfloor$$</p><p>令 $T = td$</p><p>$$\sum_{T = 1}^{min(n, m)} \lfloor\frac{n}{T}\rfloor \times \lfloor\frac{m}{T}\rfloor \sum_{d | T, d \in prime} \mu (\frac{T}{d})$$</p><hr><h4>Crash的数字表格</h4><p>$$\sum_{i = 1}^n \sum_{j = 1}^m lcm(i, j)$$</p><p>$$\sum_{i = 1}^n \sum_{j = 1}^m \frac{ij}{gcd(i, j)}$$</p><p>$$\sum_{t = 1}^{min(n, m)} t\  \sum_{i = 1}^{\lfloor\frac{n}{t}\rfloor} \sum_{j = 1}^{\lfloor\frac{m}{t}\rfloor} [gcd(i, j] == 1]\  ij$$</p><p>$$\sum_{t = 1}^{min(n, m)} t\  \sum_{i = 1}^{\lfloor\frac{n}{t}\rfloor} \sum_{j = 1}^{\lfloor\frac{m}{t}\rfloor} \sum_{d | gcd(i, j)} \mu (d) ij<br>$$</p><p>记 $sum(n) = \frac{n * (n + 1)}{2}$ \</p><p>$$\sum_{t = 1}^{min(n, m)} t\  \sum_{d = 1}^{min(\lfloor\frac{n}{t}\rfloor, \lfloor\frac{m}{t}\rfloor)} d^2 \mu(d) \times sum(\lfloor\frac{n}{td}\rfloor) \times sum(\lfloor\frac{m}{td}\rfloor)$$</p><p>记 $f(n, m) = \sum_{d = 1}^{min(n, m)} d^2 \mu(d) \times sum(\lfloor\frac{n}{d}\rfloor) \times sum(\lfloor\frac{m}{d}\rfloor)</p><h2></h2><h2></h2><p>\sum_{t = 1}^{min(n, m)} t \times f(\lfloor\frac{n}{t}\rfloor, \lfloor\frac{m}{t}\rfloor)$$</p>]]></content>
+    <content type="html"><![CDATA[<h2>关于一些莫比乌斯反演的东西</h2><h3>常用操作</h3><p>$$[gcd(i,j) == 1] = \sum_{d | gcd(i, j)} \mu(d)$$</p><h3>例题</h3><hr><h4>yy的gcd</h4><p>$$\sum_{t \in prime} \sum_{i = 1}^n \sum_{j = 1}^m  [gcd(i, j) == t]$$</p><p>$$\sum_{t \in prime} \sum_{i = 1}^{\lfloor\frac{n}{t}\rfloor} \sum_{j = 1}^{\lfloor\frac{m}{t}\rfloor}  [gcd(i, j) == 1]$$</p><p>$$\sum_{t \in prime} \sum_{i = 1}^{\lfloor\frac{n}{t}\rfloor} \sum_{j = 1}^{\lfloor\frac{m}{t}\rfloor}  \sum_{d | gcd(i, j)} \mu(d)$$</p><p>$$\sum_{t \in prime} \sum_{d = 1}^{\lfloor\frac{n}{t}\rfloor} \mu(d) \times \lfloor\frac{n}{dt}\rfloor \times \lfloor\frac{m}{dt}\rfloor$$</p><p>令 $T = td$</p><p>$$\sum_{T = 1}^{min(n, m)} \lfloor\frac{n}{T}\rfloor \times \lfloor\frac{m}{T}\rfloor \sum_{d | T, d \in prime} \mu (\frac{T}{d})$$</p><hr><h4>Crash的数字表格</h4><p>$$\sum_{i = 1}^n \sum_{j = 1}^m lcm(i, j)$$</p><p>$$\sum_{i = 1}^n \sum_{j = 1}^m \frac{ij}{gcd(i, j)}$$</p><p>$$\sum_{t = 1}^{min(n, m)} t\  \sum_{i = 1}^{\lfloor\frac{n}{t}\rfloor} \sum_{j = 1}^{\lfloor\frac{m}{t}\rfloor} [gcd(i, j] == 1]\  ij$$</p><p>$$\sum_{t = 1}^{min(n, m)} t\  \sum_{i = 1}^{\lfloor\frac{n}{t}\rfloor} \sum_{j = 1}^{\lfloor\frac{m}{t}\rfloor} \sum_{d | gcd(i, j)} \mu (d) ij<br>$$</p><p>记 $sum(n) = \frac{n * (n + 1)}{2}$</p><p>$$\sum_{t = 1}^{min(n, m)} t\  \sum_{d = 1}^{min(\lfloor\frac{n}{t}\rfloor, \lfloor\frac{m}{t}\rfloor)} d^2 \mu(d) \times sum(\lfloor\frac{n}{td}\rfloor) \times sum(\lfloor\frac{m}{td}\rfloor)$$</p><p>记 $f(n, m) = \sum_{d = 1}^{min(n, m)} d^2 \mu(d) \times sum(\lfloor\frac{n}{d}\rfloor) \times sum(\lfloor\frac{m}{d}\rfloor) $</p><p>$$\sum_{t = 1}^{min(n, m)} t \times f(\lfloor\frac{n}{t}\rfloor, \lfloor\frac{m}{t}\rfloor)$$</p>]]></content>
     
     <summary type="html">
     
