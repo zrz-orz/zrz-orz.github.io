@@ -213,6 +213,102 @@
   
   
   <div class="post-block home">
+    <link itemprop="mainEntityOfPage" href="https://zrz-orz.github.io/2019/09/20/莫比乌斯反演相关记录/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zrz_orz">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="zrz_orz's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/2019/09/20/莫比乌斯反演相关记录/" class="post-title-link" itemprop="url">Untitled</a>
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              
+                
+              
+
+              <time title="Created: 2019-09-20 21:09:13" itemprop="dateCreated datePublished" datetime="2019-09-20T21:09:13+08:00">2019-09-20</time>
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2>关于一些莫比乌斯反演的东西</h2>
+<h3>常用操作</h3>
+<p>$$
+[gcd(i,j) == 1] = \sum_{d | gcd(i, j)} \mu(d)
+$$</p>
+<h3>例题</h3>
+<hr>
+<h4>yy的gcd</h4>
+<p>$$
+\sum_{t \in prime} \sum_{i = 1}^n \sum_{j = 1}^m  [gcd(i, j) == t] \</p>
+<p>\sum_{t \in prime} \sum_{i = 1}^{\lfloor\frac{n}{t}\rfloor} \sum_{j = 1}^{\lfloor\frac{m}{t}\rfloor}  [gcd(i, j) == 1] \</p>
+<p>\sum_{t \in prime} \sum_{i = 1}^{\lfloor\frac{n}{t}\rfloor} \sum_{j = 1}^{\lfloor\frac{m}{t}\rfloor}  \sum_{d | gcd(i, j)} \mu(d) \</p>
+<p>\sum_{t \in prime} \sum_{d = 1}^{\lfloor\frac{n}{t}\rfloor} \mu(d) \times \lfloor\frac{n}{dt}\rfloor \times \lfloor\frac{m}{dt}\rfloor \</p>
+<p>令 T = td \</p>
+<p>\sum_{T = 1}^{min(n, m)} \lfloor\frac{n}{T}\rfloor \times \lfloor\frac{m}{T}\rfloor \sum_{d | T, d \in prime} \mu (\frac{T}{d})
+$$</p>
+<hr>
+<h4>Crash的数字表格</h4>
+<p>$$</p>
+<p>\sum_{i = 1}^n \sum_{j = 1}^m lcm(i, j)         \</p>
+<p>\sum_{i = 1}^n \sum_{j = 1}^m \frac{ij}{gcd(i, j)}      \</p>
+<p>\sum_{t = 1}^{min(n, m)} t\  \sum_{i = 1}^{\lfloor\frac{n}{t}\rfloor} \sum_{j = 1}^{\lfloor\frac{m}{t}\rfloor} [gcd(i, j] == 1]\  ij    \</p>
+<p>\sum_{t = 1}^{min(n, m)} t\  \sum_{i = 1}^{\lfloor\frac{n}{t}\rfloor} \sum_{j = 1}^{\lfloor\frac{m}{t}\rfloor} \sum_{d | gcd(i, j)} \mu (d) ij   \</p>
+<p>记 sum(n) = \frac{n * (n + 1)}{2} \</p>
+<p>\sum_{t = 1}^{min(n, m)} t\  \sum_{d = 1}^{min(\lfloor\frac{n}{t}\rfloor, \lfloor\frac{m}{t}\rfloor)} d^2 \mu(d) \times sum(\lfloor\frac{n}{td}\rfloor) \times sum(\lfloor\frac{m}{td}\rfloor) \</p>
+<p>记\ f(n, m) = \sum_{d = 1}^{min(n, m)} d^2 \mu(d) \times sum(\lfloor\frac{n}{d}\rfloor) \times sum(\lfloor\frac{m}{d}\rfloor) \</p>
+<p>\sum_{t = 1}^{min(n, m)} t \times f(\lfloor\frac{n}{t}\rfloor, \lfloor\frac{m}{t}\rfloor)</p>
+<p>$$</p>
+
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </div>
+  
+  
+  
+  </article>
+
+    
+        <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block home">
     <link itemprop="mainEntityOfPage" href="https://zrz-orz.github.io/2019/09/20/test/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -261,76 +357,9 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="Test"><a href="#Test" class="headerlink" title="Test"></a>Test</h2><p>貌似有数学公式的页面看不了？？</p>
+          <h2>Test</h2>
+<p>貌似有数学公式的页面看不了？？</p>
 
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-          <div class="post-eof"></div>
-        
-      </footer>
-  </div>
-  
-  
-  
-  </article>
-
-    
-        <article itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block home">
-    <link itemprop="mainEntityOfPage" href="https://zrz-orz.github.io/2019/09/20/莫比乌斯反演相关记录/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zrz_orz">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="zrz_orz's Blog">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-            
-            <a href="/2019/09/20/莫比乌斯反演相关记录/" class="post-title-link" itemprop="url">莫比乌斯反演相关记录</a>
-          
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              
-                
-              
-
-              <time title="Created: 2019-09-20 21:03:48" itemprop="dateCreated datePublished" datetime="2019-09-20T21:03:48+08:00">2019-09-20</time>
-            </span>
-          
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          
         
       
     </div>
