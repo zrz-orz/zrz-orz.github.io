@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://zrz-orz.github.io/"/>
-  <updated>2019-09-20T13:03:48.432Z</updated>
+  <updated>2019-09-20T13:06:08.472Z</updated>
   <id>https://zrz-orz.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>test</title>
+    <link href="https://zrz-orz.github.io/2019/09/20/test/"/>
+    <id>https://zrz-orz.github.io/2019/09/20/test/</id>
+    <published>2019-09-20T13:05:33.000Z</published>
+    <updated>2019-09-20T13:06:08.472Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Test"><a href="#Test" class="headerlink" title="Test"></a>Test</h2><p>貌似有数学公式的页面看不了？？</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Test&quot;&gt;&lt;a href=&quot;#Test&quot; class=&quot;headerlink&quot; title=&quot;Test&quot;&gt;&lt;/a&gt;Test&lt;/h2&gt;&lt;p&gt;貌似有数学公式的页面看不了？？&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+    
+      <category term="测试" scheme="https://zrz-orz.github.io/tags/%E6%B5%8B%E8%AF%95/"/>
+    
+  </entry>
   
   <entry>
     <title>莫比乌斯反演相关记录</title>
