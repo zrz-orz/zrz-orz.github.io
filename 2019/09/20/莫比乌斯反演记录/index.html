@@ -6,7 +6,7 @@
 
 <html lang="zh-Hans">
 <head>
-  <meta charset="UTF-8">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 <meta name="generator" content="Hexo 3.9.0">
@@ -64,7 +64,7 @@
 <meta property="og:site_name" content="zrz_orz&#39;s Blog">
 <meta property="og:description" content="关于一些莫比乌斯反演的东西 常用操作 $$ [gcd(i,j) == 1] = \sum_{d | gcd(i, j)} \mu(d) $$ 例题  yy的gcd $$ \sum_{t \in prime} \sum_{i = 1}^n \sum_{j = 1}^m  [gcd(i, j) == t] $$ $$ \sum_{t \in prime} \sum_{i = 1}^{\lfloor\f">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-20T12:36:25.105Z">
+<meta property="og:updated_time" content="2019-09-20T12:40:25.008Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="莫比乌斯反演记录">
 <meta name="twitter:description" content="关于一些莫比乌斯反演的东西 常用操作 $$ [gcd(i,j) == 1] = \sum_{d | gcd(i, j)} \mu(d) $$ 例题  yy的gcd $$ \sum_{t \in prime} \sum_{i = 1}^n \sum_{j = 1}^m  [gcd(i, j) == t] $$ $$ \sum_{t \in prime} \sum_{i = 1}^{\lfloor\f">
@@ -114,12 +114,12 @@
   .use-motion .logo-line-before i { left: initial; }
   .use-motion .logo-line-after i { right: initial; }
   </style>
-</noscript>
+</noscript><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
-  <div class="container use-motion">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container use-motion">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -247,7 +247,7 @@
                 
               
 
-              <time title="Created: 2019-09-20 18:50:46 / Modified: 20:36:25" itemprop="dateCreated datePublished" datetime="2019-09-20T18:50:46+08:00">2019-09-20</time>
+              <time title="Created: 2019-09-20 18:50:46 / Modified: 20:40:25" itemprop="dateCreated datePublished" datetime="2019-09-20T18:50:46+08:00">2019-09-20</time>
             </span>
           
             
@@ -509,6 +509,56 @@ $$</p>
 
   
 
+  
+    
+      
+<script type="text/x-mathjax-config">
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') {
+          next = next.nextSibling;
+        }
+        if (next && next.nodeName.toLowerCase() === 'br') {
+          next.parentNode.removeChild(next);
+        }
+      }
+    });
+  });
+
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      element = document.getElementById(all[i].inputID + '-Frame').parentNode;
+      if (element.nodeName.toLowerCase() == 'li') {
+        element = element.parentNode;
+      }
+      element.classList.add('has-jax');
+    }
+  });
+</script>
+<script>
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML', () => {
+    MathJax.Hub.Typeset();
+  }, window.MathJax);
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+    
   
 
   
