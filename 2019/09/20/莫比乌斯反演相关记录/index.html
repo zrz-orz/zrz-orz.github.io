@@ -56,18 +56,18 @@
   };
 </script>
 
-  <meta name="description" content="关于一些莫比乌斯反演的东西 常用操作 $$ [gcd(i,j) == 1] = \sum_{d | gcd(i, j)} \mu(d) $$ 例题  yy的gcd $$ \sum_{t \in prime} \sum_{i = 1}^n \sum_{j = 1}^m  [gcd(i, j) == t] \ \sum_{t \in prime} \sum_{i = 1}^{\lfloor\frac{">
+  <meta name="description" content="关于一些莫比乌斯反演的东西常用操作 [gcd(i,j) == 1] = \sum_{d | gcd(i, j)} \mu(d)例题 yy的gcd \sum_{t \in prime} \sum_{i = 1}^n \sum_{j = 1}^m  [gcd(i, j) == t] \\  \sum_{t \in prime} \sum_{i = 1}^{\lfloor\frac{n}{t}\rflo">
 <meta name="keywords" content="OI">
 <meta property="og:type" content="article">
 <meta property="og:title" content="莫比乌斯反演相关记录">
 <meta property="og:url" content="https://zrz-orz.github.io/2019/09/20/莫比乌斯反演相关记录/index.html">
 <meta property="og:site_name" content="zrz_orz&#39;s Blog">
-<meta property="og:description" content="关于一些莫比乌斯反演的东西 常用操作 $$ [gcd(i,j) == 1] = \sum_{d | gcd(i, j)} \mu(d) $$ 例题  yy的gcd $$ \sum_{t \in prime} \sum_{i = 1}^n \sum_{j = 1}^m  [gcd(i, j) == t] \ \sum_{t \in prime} \sum_{i = 1}^{\lfloor\frac{">
+<meta property="og:description" content="关于一些莫比乌斯反演的东西常用操作 [gcd(i,j) == 1] = \sum_{d | gcd(i, j)} \mu(d)例题 yy的gcd \sum_{t \in prime} \sum_{i = 1}^n \sum_{j = 1}^m  [gcd(i, j) == t] \\  \sum_{t \in prime} \sum_{i = 1}^{\lfloor\frac{n}{t}\rflo">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-20T13:12:45.342Z">
+<meta property="og:updated_time" content="2019-09-20T13:14:02.132Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="莫比乌斯反演相关记录">
-<meta name="twitter:description" content="关于一些莫比乌斯反演的东西 常用操作 $$ [gcd(i,j) == 1] = \sum_{d | gcd(i, j)} \mu(d) $$ 例题  yy的gcd $$ \sum_{t \in prime} \sum_{i = 1}^n \sum_{j = 1}^m  [gcd(i, j) == t] \ \sum_{t \in prime} \sum_{i = 1}^{\lfloor\frac{">
+<meta name="twitter:description" content="关于一些莫比乌斯反演的东西常用操作 [gcd(i,j) == 1] = \sum_{d | gcd(i, j)} \mu(d)例题 yy的gcd \sum_{t \in prime} \sum_{i = 1}^n \sum_{j = 1}^m  [gcd(i, j) == t] \\  \sum_{t \in prime} \sum_{i = 1}^{\lfloor\frac{n}{t}\rflo">
   <link rel="canonical" href="https://zrz-orz.github.io/2019/09/20/莫比乌斯反演相关记录/">
 
 
@@ -247,7 +247,7 @@
                 
               
 
-              <time title="Created: 2019-09-20 20:05:33 / Modified: 21:12:45" itemprop="dateCreated datePublished" datetime="2019-09-20T20:05:33+08:00">2019-09-20</time>
+              <time title="Created: 2019-09-20 20:05:33 / Modified: 21:14:02" itemprop="dateCreated datePublished" datetime="2019-09-20T20:05:33+08:00">2019-09-20</time>
             </span>
           
             
@@ -266,35 +266,40 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2>关于一些莫比乌斯反演的东西</h2>
-<h3>常用操作</h3>
-<p>$$
-[gcd(i,j) == 1] = \sum_{d | gcd(i, j)} \mu(d)
-$$</p>
-<h3>例题</h3>
-<hr>
-<h4>yy的gcd</h4>
-<p>$$
-\sum_{t \in prime} \sum_{i = 1}^n \sum_{j = 1}^m  [gcd(i, j) == t] \</p>
-<p>\sum_{t \in prime} \sum_{i = 1}^{\lfloor\frac{n}{t}\rfloor} \sum_{j = 1}^{\lfloor\frac{m}{t}\rfloor}  [gcd(i, j) == 1] \</p>
-<p>\sum_{t \in prime} \sum_{i = 1}^{\lfloor\frac{n}{t}\rfloor} \sum_{j = 1}^{\lfloor\frac{m}{t}\rfloor}  \sum_{d | gcd(i, j)} \mu(d) \</p>
-<p>\sum_{t \in prime} \sum_{d = 1}^{\lfloor\frac{n}{t}\rfloor} \mu(d) \times \lfloor\frac{n}{dt}\rfloor \times \lfloor\frac{m}{dt}\rfloor \</p>
-<p>令 T = td \</p>
-<p>\sum_{T = 1}^{min(n, m)} \lfloor\frac{n}{T}\rfloor \times \lfloor\frac{m}{T}\rfloor \sum_{d | T, d \in prime} \mu (\frac{T}{d})
-$$</p>
-<hr>
-<h4>Crash的数字表格</h4>
-<p>$$</p>
-<p>\sum_{i = 1}^n \sum_{j = 1}^m lcm(i, j)         \</p>
-<p>\sum_{i = 1}^n \sum_{j = 1}^m \frac{ij}{gcd(i, j)}      \</p>
-<p>\sum_{t = 1}^{min(n, m)} t\  \sum_{i = 1}^{\lfloor\frac{n}{t}\rfloor} \sum_{j = 1}^{\lfloor\frac{m}{t}\rfloor} [gcd(i, j] == 1]\  ij    \</p>
-<p>\sum_{t = 1}^{min(n, m)} t\  \sum_{i = 1}^{\lfloor\frac{n}{t}\rfloor} \sum_{j = 1}^{\lfloor\frac{m}{t}\rfloor} \sum_{d | gcd(i, j)} \mu (d) ij   \</p>
-<p>记 sum(n) = \frac{n * (n + 1)}{2} \</p>
-<p>\sum_{t = 1}^{min(n, m)} t\  \sum_{d = 1}^{min(\lfloor\frac{n}{t}\rfloor, \lfloor\frac{m}{t}\rfloor)} d^2 \mu(d) \times sum(\lfloor\frac{n}{td}\rfloor) \times sum(\lfloor\frac{m}{td}\rfloor) \</p>
-<p>记\ f(n, m) = \sum_{d = 1}^{min(n, m)} d^2 \mu(d) \times sum(\lfloor\frac{n}{d}\rfloor) \times sum(\lfloor\frac{m}{d}\rfloor) \</p>
-<p>\sum_{t = 1}^{min(n, m)} t \times f(\lfloor\frac{n}{t}\rfloor, \lfloor\frac{m}{t}\rfloor)</p>
-<p>$$</p>
+        <h2 id="关于一些莫比乌斯反演的东西"><a href="#关于一些莫比乌斯反演的东西" class="headerlink" title="关于一些莫比乌斯反演的东西"></a>关于一些莫比乌斯反演的东西</h2><h3 id="常用操作"><a href="#常用操作" class="headerlink" title="常用操作"></a>常用操作</h3><script type="math/tex; mode=display">
+[gcd(i,j) == 1] = \sum_{d | gcd(i, j)} \mu(d)</script><h3 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h3><hr>
+<h4 id="yy的gcd"><a href="#yy的gcd" class="headerlink" title="yy的gcd"></a>yy的gcd</h4><script type="math/tex; mode=display">
+\sum_{t \in prime} \sum_{i = 1}^n \sum_{j = 1}^m  [gcd(i, j) == t] \\
 
+\sum_{t \in prime} \sum_{i = 1}^{\lfloor\frac{n}{t}\rfloor} \sum_{j = 1}^{\lfloor\frac{m}{t}\rfloor}  [gcd(i, j) == 1] \\
+
+\sum_{t \in prime} \sum_{i = 1}^{\lfloor\frac{n}{t}\rfloor} \sum_{j = 1}^{\lfloor\frac{m}{t}\rfloor}  \sum_{d | gcd(i, j)} \mu(d) \\
+
+\sum_{t \in prime} \sum_{d = 1}^{\lfloor\frac{n}{t}\rfloor} \mu(d) \times \lfloor\frac{n}{dt}\rfloor \times \lfloor\frac{m}{dt}\rfloor \\
+
+令 T = td \\
+
+\sum_{T = 1}^{min(n, m)} \lfloor\frac{n}{T}\rfloor \times \lfloor\frac{m}{T}\rfloor \sum_{d | T, d \in prime} \mu (\frac{T}{d})</script><hr>
+<h4 id="Crash的数字表格"><a href="#Crash的数字表格" class="headerlink" title="Crash的数字表格"></a>Crash的数字表格</h4><script type="math/tex; mode=display">
+
+\sum_{i = 1}^n \sum_{j = 1}^m lcm(i, j)         \\
+
+\sum_{i = 1}^n \sum_{j = 1}^m \frac{ij}{gcd(i, j)}      \\
+
+
+\sum_{t = 1}^{min(n, m)} t\  \sum_{i = 1}^{\lfloor\frac{n}{t}\rfloor} \sum_{j = 1}^{\lfloor\frac{m}{t}\rfloor} [gcd(i, j] == 1]\  ij    \\
+
+
+\sum_{t = 1}^{min(n, m)} t\  \sum_{i = 1}^{\lfloor\frac{n}{t}\rfloor} \sum_{j = 1}^{\lfloor\frac{m}{t}\rfloor} \sum_{d | gcd(i, j)} \mu (d) ij   \\
+
+记 sum(n) = \frac{n * (n + 1)}{2} \\
+
+
+\sum_{t = 1}^{min(n, m)} t\  \sum_{d = 1}^{min(\lfloor\frac{n}{t}\rfloor, \lfloor\frac{m}{t}\rfloor)} d^2 \mu(d) \times sum(\lfloor\frac{n}{td}\rfloor) \times sum(\lfloor\frac{m}{td}\rfloor) \\
+
+记\ f(n, m) = \sum_{d = 1}^{min(n, m)} d^2 \mu(d) \times sum(\lfloor\frac{n}{d}\rfloor) \times sum(\lfloor\frac{m}{d}\rfloor) \\
+
+\sum_{t = 1}^{min(n, m)} t \times f(\lfloor\frac{n}{t}\rfloor, \lfloor\frac{m}{t}\rfloor)</script>
     </div>
 
     
@@ -380,7 +385,7 @@ $$</p>
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">1.</span> <span class="nav-text">关于一些莫比乌斯反演的东西</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">1.1.</span> <span class="nav-text">常用操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">1.2.</span> <span class="nav-text">例题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#null"><span class="nav-number">1.2.1.</span> <span class="nav-text">yy的gcd</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#null"><span class="nav-number">1.2.2.</span> <span class="nav-text">Crash的数字表格</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#关于一些莫比乌斯反演的东西"><span class="nav-number">1.</span> <span class="nav-text">关于一些莫比乌斯反演的东西</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#常用操作"><span class="nav-number">1.1.</span> <span class="nav-text">常用操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#例题"><span class="nav-number">1.2.</span> <span class="nav-text">例题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#yy的gcd"><span class="nav-number">1.2.1.</span> <span class="nav-text">yy的gcd</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Crash的数字表格"><span class="nav-number">1.2.2.</span> <span class="nav-text">Crash的数字表格</span></a></li></ol></li></ol></li></ol></div>
         
       </div>
       <!--/noindex-->
@@ -467,7 +472,7 @@ $$</p>
 <script src="/js/utils.js?v=7.4.0"></script><script src="/js/motion.js?v=7.4.0"></script>
 <script src="/js/schemes/muse.js?v=7.4.0"></script>
 
-<script src="/js/next-boot.js?v=7.4.0"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+<script src="/js/next-boot.js?v=7.4.0"></script>
 
 
 
@@ -495,6 +500,56 @@ $$</p>
 
   
 
+  
+    
+      
+<script type="text/x-mathjax-config">
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') {
+          next = next.nextSibling;
+        }
+        if (next && next.nodeName.toLowerCase() === 'br') {
+          next.parentNode.removeChild(next);
+        }
+      }
+    });
+  });
+
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      element = document.getElementById(all[i].inputID + '-Frame').parentNode;
+      if (element.nodeName.toLowerCase() == 'li') {
+        element = element.parentNode;
+      }
+      element.classList.add('has-jax');
+    }
+  });
+</script>
+<script>
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML', () => {
+    MathJax.Hub.Typeset();
+  }, window.MathJax);
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+    
   
 
   
