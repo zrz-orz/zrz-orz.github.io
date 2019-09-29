@@ -64,7 +64,7 @@
 <meta property="og:site_name" content="zrz_orz&#39;s Blog">
 <meta property="og:description" content="2-sat 众所周知是适应性问题。是 k-sat 问题的分支，但是 $k &amp;gt;= 3$ 时他是 NP 问题2-sat 主要用来处理形如: 每种元素有两种状态, 选 $A$ 状态必须选 $B$ 状态或 选 $A$ 状态不能选 $B$ 状态等限制的问题常用的方法是 $Dfs$ 或 $SCC$.先对于每个元素拆成两个点代表这个元素的两种状态，再对于限制连边">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-29T20:03:29.541Z">
+<meta property="og:updated_time" content="2019-09-29T20:04:55.104Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="2-Sat 学习 ">
 <meta name="twitter:description" content="2-sat 众所周知是适应性问题。是 k-sat 问题的分支，但是 $k &amp;gt;= 3$ 时他是 NP 问题2-sat 主要用来处理形如: 每种元素有两种状态, 选 $A$ 状态必须选 $B$ 状态或 选 $A$ 状态不能选 $B$ 状态等限制的问题常用的方法是 $Dfs$ 或 $SCC$.先对于每个元素拆成两个点代表这个元素的两种状态，再对于限制连边">
@@ -274,7 +274,7 @@
                 
               
 
-              <time title="Created: 2019-09-30 03:42:35 / Modified: 04:03:29" itemprop="dateCreated datePublished" datetime="2019-09-30T03:42:35+08:00">2019-09-30</time>
+              <time title="Created: 2019-09-30 03:42:35 / Modified: 04:04:55" itemprop="dateCreated datePublished" datetime="2019-09-30T03:42:35+08:00">2019-09-30</time>
             </span>
           
             
@@ -314,68 +314,7 @@
 <p>当状态 $A$ 不成立时,状态 $B$ 一定成立</p>
 <p>反过来也连一次</p>
 <p>代码:
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
-<p>#include &lt;bits/stdc++.h&gt;</p>
-<p>#define rep(i, a, b) for(int i = a; i &lt;= b; ++i)
-#define ll long long</p>
-<p>using namespace std;</p>
-<p>#define N 2000005</p>
-<p>int n, m, cnt, id, tot;
-int fir[N], nx[N &lt;&lt; 1], to[N &lt;&lt; 1];
-int dfn[N], low[N], scc[N];
-stack&lt;int&gt; st;
-bool vis[N];</p>
-<p>inline void add(int _, int <em><em>) {
-nx[++cnt] = fir[</em>];
-fir[</em>] = cnt;
-to[cnt] = __;
-}</p>
-<p>void tarjan(int x) {
-dfn[x] = low[x] = ++id;
-st.push(x);
-vis[x] = 1;
-for (int i = fir[x]; i; i = nx[i]) {
-int v = to[i];
-if (!dfn[v]) {
-tarjan(v);
-low[x] = min(low[x], low[v]);
-}
-else if (vis[v]) low[x] = min(low[x], dfn[v]);
-}
-if (low[x] == dfn[x]) {
-int tmp;
-++tot;
-do {
-tmp = st.top();
-st.pop();
-vis[tmp] = 0;
-scc[tmp] = tot;
-} while(tmp != x);
-}
-}</p>
-<p>int main() {
-ios::sync_with_stdio(false);
-cin &gt;&gt; n &gt;&gt; m;
-int x, y, a, b;
-rep (i, 1, m) {
-cin &gt;&gt; x &gt;&gt; a &gt;&gt; y &gt;&gt; b;
-add(x + (a ^ 1) * n, y + b * n);
-add(y + (b ^ 1) * n, x + a * n);
-}
-rep (i, 1, n * 2) if (!dfn[i]) tarjan(i);
-rep (i, 1, n) {
-if (scc[i] == scc[i + n]) {
-puts(&quot;IMPOSSIBLE&quot;);
-return 0;
-}
-}
-puts (&quot;POSSIBLE&quot;);
-rep (i, 1, n) {
-if (scc[i] &gt; scc[i + n]) printf(&quot;1 &quot;);
-else printf(&quot;0 &quot;);
-}
-return 0;
-}</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> rep(i, a, b) for(int i = a; i &lt;= b; ++i)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> N 2000005</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n, m, cnt, id, tot;</span><br><span class="line"><span class="keyword">int</span> fir[N], nx[N &lt;&lt; <span class="number">1</span>], to[N &lt;&lt; <span class="number">1</span>];</span><br><span class="line"><span class="keyword">int</span> dfn[N], low[N], scc[N];</span><br><span class="line"><span class="built_in">stack</span>&lt;<span class="keyword">int</span>&gt; st;</span><br><span class="line"><span class="keyword">bool</span> vis[N];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> _, <span class="keyword">int</span> __)</span> </span>&#123;</span><br><span class="line">    nx[++cnt] = fir[_];</span><br><span class="line">    fir[_] = cnt;</span><br><span class="line">    to[cnt] = __;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">tarjan</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">    dfn[x] = low[x] = ++id;</span><br><span class="line">    st.push(x);</span><br><span class="line">    vis[x] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = fir[x]; i; i = nx[i]) &#123;</span><br><span class="line">        <span class="keyword">int</span> v = to[i];</span><br><span class="line">        <span class="keyword">if</span> (!dfn[v]) &#123;</span><br><span class="line">            tarjan(v);</span><br><span class="line">            low[x] = min(low[x], low[v]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (vis[v]) low[x] = min(low[x], dfn[v]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (low[x] == dfn[x]) &#123;</span><br><span class="line">        <span class="keyword">int</span> tmp;</span><br><span class="line">        ++tot;</span><br><span class="line">        <span class="keyword">do</span> &#123;</span><br><span class="line">            tmp = st.top();</span><br><span class="line">            st.pop();</span><br><span class="line">            vis[tmp] = <span class="number">0</span>;</span><br><span class="line">            scc[tmp] = tot;</span><br><span class="line">        &#125; <span class="keyword">while</span>(tmp != x);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    ios::sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; m;</span><br><span class="line">    <span class="keyword">int</span> x, y, a, b;</span><br><span class="line">    rep (i, <span class="number">1</span>, m) &#123;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; x &gt;&gt; a &gt;&gt; y &gt;&gt; b;</span><br><span class="line">        add(x + (a ^ <span class="number">1</span>) * n, y + b * n);</span><br><span class="line">        add(y + (b ^ <span class="number">1</span>) * n, x + a * n);</span><br><span class="line">    &#125;</span><br><span class="line">    rep (i, <span class="number">1</span>, n * <span class="number">2</span>) <span class="keyword">if</span> (!dfn[i]) tarjan(i);</span><br><span class="line">    rep (i, <span class="number">1</span>, n) &#123;</span><br><span class="line">        <span class="keyword">if</span> (scc[i] == scc[i + n]) &#123;</span><br><span class="line">            <span class="built_in">puts</span>(<span class="string">"IMPOSSIBLE"</span>);</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">puts</span> (<span class="string">"POSSIBLE"</span>);</span><br><span class="line">    rep (i, <span class="number">1</span>, n) &#123;</span><br><span class="line">        <span class="keyword">if</span> (scc[i] &gt; scc[i + n]) <span class="built_in">printf</span>(<span class="string">"1 "</span>);</span><br><span class="line">        <span class="keyword">else</span> <span class="built_in">printf</span>(<span class="string">"0 "</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
     </div>
 
