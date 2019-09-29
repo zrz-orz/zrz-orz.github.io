@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://zrz-orz.github.io/"/>
-  <updated>2019-09-27T06:31:37.455Z</updated>
+  <updated>2019-09-29T20:03:29.541Z</updated>
   <id>https://zrz-orz.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>2-Sat 学习 </title>
+    <link href="https://zrz-orz.github.io/2019/09/30/2-Sat-%E5%AD%A6%E4%B9%A0/"/>
+    <id>https://zrz-orz.github.io/2019/09/30/2-Sat-学习/</id>
+    <published>2019-09-29T19:42:35.000Z</published>
+    <updated>2019-09-29T20:03:29.541Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>2-sat</strong> 众所周知是适应性问题。</p><p>是 <strong>k-sat</strong> 问题的分支，但是 $k &gt;= 3$ 时他是 NP 问题</p><p><strong>2-sat</strong> 主要用来处理形如: 每种元素有两种状态, 选 $A$ 状态必须选 $B$ 状态或 选 $A$ 状态不能选 $B$ 状态等限制的问题</p><p>常用的方法是 $Dfs$ 或 $SCC$.</p><p>先对于每个元素拆成两个点代表这个元素的两种状态，再对于限制连边</p><a id="more"></a><p>边 $(u, v)$ 的含义为 $u$ 的状态与 $v$ 相同</p><p>那么对于一个强连通分量，里面的点一定是要一起选的，而一个元素只有一种状态那么对于同一个元素的两个点不可能属于一个强连通分量</p><p>这就判断了可行性</p><p>如何输出解??</p><p>可以 $Dfs$</p><p>不过一种可行的方案是选取每个元素强连通分量编号较小的一个。</p><p>不会证，好像和拓扑序的反序有关</p><p>例题: Luogu 2-SAT 问题</p><blockquote><p>有 $N$ 个布尔变量$x_1$, $M$ 个需要满足的条件，每个条件的形式都是&quot;$x_i$ $true/false$ 或 $x_j$ $true/false$&quot;。比如&quot;$x_1$为真或$x_3$为假&quot;,&quot;$x_7$为假或$x_2$为假&quot;。</p><p>$2-SAT$ 问题的目标是给每个变量赋值使得所有条件得到满足。</p></blockquote><p>显然的建图方式</p><p>当状态 $A$ 不成立时,状态 $B$ 一定成立</p><p>反过来也连一次</p><p>代码:<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></p><p>#include &lt;bits/stdc++.h&gt;</p><p>#define rep(i, a, b) for(int i = a; i &lt;= b; ++i)#define ll long long</p><p>using namespace std;</p><p>#define N 2000005</p><p>int n, m, cnt, id, tot;int fir[N], nx[N &lt;&lt; 1], to[N &lt;&lt; 1];int dfn[N], low[N], scc[N];stack&lt;int&gt; st;bool vis[N];</p><p>inline void add(int _, int <em><em>) {nx[++cnt] = fir[</em>];fir[</em>] = cnt;to[cnt] = __;}</p><p>void tarjan(int x) {dfn[x] = low[x] = ++id;st.push(x);vis[x] = 1;for (int i = fir[x]; i; i = nx[i]) {int v = to[i];if (!dfn[v]) {tarjan(v);low[x] = min(low[x], low[v]);}else if (vis[v]) low[x] = min(low[x], dfn[v]);}if (low[x] == dfn[x]) {int tmp;++tot;do {tmp = st.top();st.pop();vis[tmp] = 0;scc[tmp] = tot;} while(tmp != x);}}</p><p>int main() {ios::sync_with_stdio(false);cin &gt;&gt; n &gt;&gt; m;int x, y, a, b;rep (i, 1, m) {cin &gt;&gt; x &gt;&gt; a &gt;&gt; y &gt;&gt; b;add(x + (a ^ 1) * n, y + b * n);add(y + (b ^ 1) * n, x + a * n);}rep (i, 1, n * 2) if (!dfn[i]) tarjan(i);rep (i, 1, n) {if (scc[i] == scc[i + n]) {puts(&quot;IMPOSSIBLE&quot;);return 0;}}puts (&quot;POSSIBLE&quot;);rep (i, 1, n) {if (scc[i] &gt; scc[i + n]) printf(&quot;1 &quot;);else printf(&quot;0 &quot;);}return 0;}</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;2-sat&lt;/strong&gt; 众所周知是适应性问题。&lt;/p&gt;&lt;p&gt;是 &lt;strong&gt;k-sat&lt;/strong&gt; 问题的分支，但是 $k &amp;gt;= 3$ 时他是 NP 问题&lt;/p&gt;&lt;p&gt;&lt;strong&gt;2-sat&lt;/strong&gt; 主要用来处理形如: 每种元素有两种状态, 选 $A$ 状态必须选 $B$ 状态或 选 $A$ 状态不能选 $B$ 状态等限制的问题&lt;/p&gt;&lt;p&gt;常用的方法是 $Dfs$ 或 $SCC$.&lt;/p&gt;&lt;p&gt;先对于每个元素拆成两个点代表这个元素的两种状态，再对于限制连边&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="OI" scheme="https://zrz-orz.github.io/tags/OI/"/>
+    
+      <category term="图论" scheme="https://zrz-orz.github.io/tags/%E5%9B%BE%E8%AE%BA/"/>
+    
+  </entry>
   
   <entry>
     <title>「Test20190927」Poker  </title>

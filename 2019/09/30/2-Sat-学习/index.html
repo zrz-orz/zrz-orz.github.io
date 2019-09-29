@@ -56,14 +56,19 @@
   };
 </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="zrz_orz&#39;s Blog">
-<meta property="og:url" content="https://zrz-orz.github.io/archives/2019/09/page/2/index.html">
+  <meta name="description" content="2-sat 众所周知是适应性问题。是 k-sat 问题的分支，但是 $k &amp;gt;= 3$ 时他是 NP 问题2-sat 主要用来处理形如: 每种元素有两种状态, 选 $A$ 状态必须选 $B$ 状态或 选 $A$ 状态不能选 $B$ 状态等限制的问题常用的方法是 $Dfs$ 或 $SCC$.先对于每个元素拆成两个点代表这个元素的两种状态，再对于限制连边">
+<meta name="keywords" content="OI,图论">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2-Sat 学习 ">
+<meta property="og:url" content="https://zrz-orz.github.io/2019/09/30/2-Sat-学习/index.html">
 <meta property="og:site_name" content="zrz_orz&#39;s Blog">
+<meta property="og:description" content="2-sat 众所周知是适应性问题。是 k-sat 问题的分支，但是 $k &amp;gt;= 3$ 时他是 NP 问题2-sat 主要用来处理形如: 每种元素有两种状态, 选 $A$ 状态必须选 $B$ 状态或 选 $A$ 状态不能选 $B$ 状态等限制的问题常用的方法是 $Dfs$ 或 $SCC$.先对于每个元素拆成两个点代表这个元素的两种状态，再对于限制连边">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-09-29T20:03:29.541Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="zrz_orz&#39;s Blog">
-  <link rel="canonical" href="https://zrz-orz.github.io/archives/2019/09/page/2/">
+<meta name="twitter:title" content="2-Sat 学习 ">
+<meta name="twitter:description" content="2-sat 众所周知是适应性问题。是 k-sat 问题的分支，但是 $k &amp;gt;= 3$ 时他是 NP 问题2-sat 主要用来处理形如: 每种元素有两种状态, 选 $A$ 状态必须选 $B$ 状态或 选 $A$ 状态不能选 $B$ 状态等限制的问题常用的方法是 $Dfs$ 或 $SCC$.先对于每个元素拆成两个点代表这个元素的两种状态，再对于限制连边">
+  <link rel="canonical" href="https://zrz-orz.github.io/2019/09/30/2-Sat-学习/">
 
 
 <script id="page-configurations">
@@ -71,13 +76,13 @@
   CONFIG.page = {
     sidebar: "",
     isHome: false,
-    isPost: false,
+    isPost: true,
     isPage: false,
-    isArchive: true
+    isArchive: false
   };
 </script>
 
-  <title>Archive | zrz_orz's Blog</title>
+  <title>2-Sat 学习  | zrz_orz's Blog</title>
   
 
 
@@ -197,21 +202,6 @@
 
     
 
-  
-    
-    
-  
-    
-    
-  
-    
-    
-  
-    
-    
-  
-  
-
 </nav>
   <div class="site-search">
     <div class="popup search-popup">
@@ -250,98 +240,191 @@
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+      <article itemscope itemtype="http://schema.org/Article">
   
   
   
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        
-        
-        
+  <div class="post-block post">
+    <link itemprop="mainEntityOfPage" href="https://zrz-orz.github.io/2019/09/30/2-Sat-学习/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zrz_orz">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://i.loli.net/2019/09/21/ZU5Q8lr9qB1OKH6.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="zrz_orz's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">2-Sat 学习 
+
           
-        
-        <span class="collection-header">Um..! 12 posts in total. Keep on posting.</span>
-      </div>
-      
+        </h1>
 
-      
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
 
-  
-  
+              
+                
+              
 
-  
+              <time title="Created: 2019-09-30 03:42:35 / Modified: 04:03:29" itemprop="dateCreated datePublished" datetime="2019-09-30T03:42:35+08:00">2019-09-30</time>
+            </span>
+          
+            
+
+            
+          
+
+          
+
+        </div>
+      </header>
+
     
-    <div class="collection-year">
-      <h1 class="collection-header">2019</h1>
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p><strong>2-sat</strong> 众所周知是适应性问题。</p><p>是 <strong>k-sat</strong> 问题的分支，但是 $k &gt;= 3$ 时他是 NP 问题</p><p><strong>2-sat</strong> 主要用来处理形如: 每种元素有两种状态, 选 $A$ 状态必须选 $B$ 状态或 选 $A$ 状态不能选 $B$ 状态等限制的问题</p><p>常用的方法是 $Dfs$ 或 $SCC$.</p><p>先对于每个元素拆成两个点代表这个元素的两种状态，再对于限制连边</p><a id="more"></a>
+
+
+
+
+<p>边 $(u, v)$ 的含义为 $u$ 的状态与 $v$ 相同</p>
+<p>那么对于一个强连通分量，里面的点一定是要一起选的，而一个元素只有一种状态那么对于同一个元素的两个点不可能属于一个强连通分量</p>
+<p>这就判断了可行性</p>
+<p>如何输出解??</p>
+<p>可以 $Dfs$</p>
+<p>不过一种可行的方案是选取每个元素强连通分量编号较小的一个。</p>
+<p>不会证，好像和拓扑序的反序有关</p>
+<p>例题: Luogu 2-SAT 问题</p>
+<blockquote>
+<p>有 $N$ 个布尔变量$x_1$, $M$ 个需要满足的条件，每个条件的形式都是&quot;$x_i$ $true/false$ 或 $x_j$ $true/false$&quot;。比如&quot;$x_1$为真或$x_3$为假&quot;,&quot;$x_7$为假或$x_2$为假&quot;。</p>
+<p>$2-SAT$ 问题的目标是给每个变量赋值使得所有条件得到满足。</p>
+</blockquote>
+<p>显然的建图方式</p>
+<p>当状态 $A$ 不成立时,状态 $B$ 一定成立</p>
+<p>反过来也连一次</p>
+<p>代码:
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
+<p>#include &lt;bits/stdc++.h&gt;</p>
+<p>#define rep(i, a, b) for(int i = a; i &lt;= b; ++i)
+#define ll long long</p>
+<p>using namespace std;</p>
+<p>#define N 2000005</p>
+<p>int n, m, cnt, id, tot;
+int fir[N], nx[N &lt;&lt; 1], to[N &lt;&lt; 1];
+int dfn[N], low[N], scc[N];
+stack&lt;int&gt; st;
+bool vis[N];</p>
+<p>inline void add(int _, int <em><em>) {
+nx[++cnt] = fir[</em>];
+fir[</em>] = cnt;
+to[cnt] = __;
+}</p>
+<p>void tarjan(int x) {
+dfn[x] = low[x] = ++id;
+st.push(x);
+vis[x] = 1;
+for (int i = fir[x]; i; i = nx[i]) {
+int v = to[i];
+if (!dfn[v]) {
+tarjan(v);
+low[x] = min(low[x], low[v]);
+}
+else if (vis[v]) low[x] = min(low[x], dfn[v]);
+}
+if (low[x] == dfn[x]) {
+int tmp;
+++tot;
+do {
+tmp = st.top();
+st.pop();
+vis[tmp] = 0;
+scc[tmp] = tot;
+} while(tmp != x);
+}
+}</p>
+<p>int main() {
+ios::sync_with_stdio(false);
+cin &gt;&gt; n &gt;&gt; m;
+int x, y, a, b;
+rep (i, 1, m) {
+cin &gt;&gt; x &gt;&gt; a &gt;&gt; y &gt;&gt; b;
+add(x + (a ^ 1) * n, y + b * n);
+add(y + (b ^ 1) * n, x + a * n);
+}
+rep (i, 1, n * 2) if (!dfn[i]) tarjan(i);
+rep (i, 1, n) {
+if (scc[i] == scc[i + n]) {
+puts(&quot;IMPOSSIBLE&quot;);
+return 0;
+}
+}
+puts (&quot;POSSIBLE&quot;);
+rep (i, 1, n) {
+if (scc[i] &gt; scc[i + n]) printf(&quot;1 &quot;);
+else printf(&quot;0 &quot;);
+}
+return 0;
+}</p>
+
     </div>
-  
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
+    
+    
+    
         
-          <a class="post-title-link" href="/2019/09/20/莫比乌斯反演相关记录/" itemprop="url">
-            <span itemprop="name">莫比乌斯反演相关记录</span>
-          </a>
+      
+
+      <footer class="post-footer">
+          
+            
+          
+          <div class="post-tags">
+            
+              <a href="/tags/OI/" rel="tag"><i class="fa fa-tag"></i> OI</a>
+            
+              <a href="/tags/图论/" rel="tag"><i class="fa fa-tag"></i> 图论</a>
+            
+          </div>
         
-      </h2>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2019-09-20T20:05:33+08:00"
-              content="2019-09-20">
-          09-20
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-  
-  
-
-  
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
         
-          <a class="post-title-link" href="/2019/09/20/hello-world/" itemprop="url">
-            <span itemprop="name">hello world</span>
-          </a>
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/2019/09/27/「Test20190927」Poker/" rel="next" title="「Test20190927」Poker  ">
+                  <i class="fa fa-chevron-left"></i> 「Test20190927」Poker  
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+            </div>
+          </div>
         
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2019-09-20T16:37:21+08:00"
-              content="2019-09-20">
-          09-20
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-
-    </div>
+      </footer>
+    
   </div>
   
   
   
+  </article>
 
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/archives/2019/09/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/archives/2019/09/">1</a><span class="page-number current">2</span>
-  </nav>
-
+  </div>
 
 
           </div>
@@ -360,6 +443,11 @@
 
   <aside class="sidebar">
     <div class="sidebar-inner">
+        
+        
+        
+        
+      
 
       <ul class="sidebar-nav motion-element">
         <li class="sidebar-nav-toc">
@@ -495,7 +583,7 @@
 
 
 
-  <script src="/js/local-search.js?v=7.4.0"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <script src="/js/local-search.js?v=7.4.0"></script>
 
 
 
@@ -512,6 +600,56 @@
 
   
 
+  
+    
+      
+<script type="text/x-mathjax-config">
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') {
+          next = next.nextSibling;
+        }
+        if (next && next.nodeName.toLowerCase() === 'br') {
+          next.parentNode.removeChild(next);
+        }
+      }
+    });
+  });
+
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      element = document.getElementById(all[i].inputID + '-Frame').parentNode;
+      if (element.nodeName.toLowerCase() == 'li') {
+        element = element.parentNode;
+      }
+      element.classList.add('has-jax');
+    }
+  });
+</script>
+<script>
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML', () => {
+    MathJax.Hub.Typeset();
+  }, window.MathJax);
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+    
   
 
   
